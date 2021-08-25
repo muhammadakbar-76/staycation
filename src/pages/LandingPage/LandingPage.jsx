@@ -3,8 +3,8 @@ import Header from '../../parts/templates/Header';
 import landingPage from '../../json/landingPage.json';
 import Hero from './Hero';
 import MostPicked from './MostPicked';
-import Categories from './Categories';
-import Testimony from './Testimony';
+import Categories from '../../parts/templates/Categories';
+import Testimony from '../../parts/templates/Testimony';
 import Footer from '../../parts/templates/Footer';
 
 const LandingPage = (props) => {

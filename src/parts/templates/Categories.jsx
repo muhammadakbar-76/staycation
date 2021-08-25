@@ -3,7 +3,7 @@ import Button from '../../elements/Button/Button';
 import { Fade } from 'react-reveal';
 
 export default function Categories({data}) {
-    return data.map((cat, index) => {
+    return ( data.map((cat, index) => {
         return (
         <section className="container" key={`cat - ${index}`}>
             <Fade bottom>
@@ -47,5 +47,5 @@ export default function Categories({data}) {
             </Fade>
         </section>
         )
-    })
+    }) )
 }

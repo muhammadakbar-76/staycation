@@ -9,8 +9,6 @@ export default function Header(props) {
         return props.location.pathname === path ? " active" : ""
     }
 
-    console.log(props);
-
     return (
         <Fade>
        <header className="spacing-sm">
