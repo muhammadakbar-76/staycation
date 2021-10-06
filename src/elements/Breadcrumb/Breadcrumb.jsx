@@ -5,10 +5,9 @@ import './Breadcrumb.scss';
 
 const Breadcrumb = (props) => {
     const {className} = props;
-
     return (
         <nav aria-label="breadcrumb">
-          <ol className={`breadcrumb ${className.join(" ")}`}>
+          <ol className={`breadcrumb ${className ? className.join(" ") : ""}`}>
             {props.data.map((item, index) => {
               return (
                 <li

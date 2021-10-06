@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import propTypes from 'prop-types';
 import './InputNumber.scss';
 
@@ -7,6 +7,10 @@ const InputNumber = (props) => {
     const {value, placeholder, name, min, max, prefix, suffix, isSuffixPrular} = props;
     
     const [InputValue, setInputValue] = useState(`${prefix}${value}${suffix}`);
+
+    useEffect(() => {
+      setInputValue(`${prefix}${value}${suffix}${isSuffixPrular && value > 1 ? "s" : ""}`);
+    }, [value])
 
     const onChange = e => {
         let value = String(e.target.value);

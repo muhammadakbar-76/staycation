@@ -30,7 +30,7 @@ const InputDate = (props) => {
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
         }
-    });
+    },[]);
 
     const refDate = useRef(null);
     const handleClickOutside = (e) => {
