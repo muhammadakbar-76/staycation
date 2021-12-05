@@ -1,10 +1,8 @@
-import axios from "axios";
+import axios from "../../configs/axios";
 import { FETCH_PAGE } from "../types";
 
 export const fetchPage = (url, page) => (dispatch) => {
-    return axios.get(url,{
-        crossDomain: true
-    }).then( res => {
+    return axios.get(url).then( res => {
         dispatch({
             type: FETCH_PAGE,
             payload: {

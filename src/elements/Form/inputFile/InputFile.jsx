@@ -67,7 +67,7 @@ File.defaultProps = {
 File.propTypes = {
   name: propTypes.string.isRequired,
   accept: propTypes.string.isRequired,
-  value: propTypes.string.isRequired,
+  value: propTypes.oneOfType([propTypes.object, propTypes.string]),
   onChange: propTypes.func.isRequired,
   prepend: propTypes.oneOfType([propTypes.number, propTypes.string]),
   append: propTypes.oneOfType([propTypes.number, propTypes.string]),

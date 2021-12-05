@@ -22,7 +22,7 @@ const DetailPage = (props) => {
        window.scrollTo(0, 0);
 
        if (!page[match.params.id]) { // ini kalo property nya dinamis, contoh page.{_id}
-        props.fetchPage(`${process.env.REACT_APP_HOST}/api/v1/member/detail-page/${match.params.id}`, match.params.id);
+        props.fetchPage(`/detail-page/${match.params.id}`, match.params.id);
     }
     });
 

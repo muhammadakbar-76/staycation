@@ -18,7 +18,7 @@ const LandingPage = (props) => {
         window.scrollTo(0, 0);
 
         if (!props.page.landingPage) {
-            props.fetchPage(`${process.env.REACT_APP_HOST}/api/v1/member/landing-page`, "landingPage");
+            props.fetchPage(`/landing-page`, "landingPage");
         }
 
      },[]);

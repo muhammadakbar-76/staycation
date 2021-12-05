@@ -34,21 +34,27 @@ const CheckOut = (props) => {
         })
     }
 
-    const submit = () => {
+    const submit = (nextStep) => {
       const payload = new FormData();
       const { checkout } = props;
       payload.append("firstName", data.firstName);
       payload.append("lastName", data.lastName);
       payload.append("email", data.email);
       payload.append("phoneNumber", data.phone);
-      payload.append("itemId", checkout._id);
+      payload.append("idItem", checkout._id);
       payload.append("duration", checkout.duration);
       payload.append("bookingStartDate", checkout.date.startDate);
       payload.append("bookingEndDate", checkout.date.endDate);
       payload.append("accountHolder", data.bankHolder);
       payload.append("bankFrom", data.bankName);
-      payload.append("image", data.proofPayment);
-      payload.append("bankId", data.bankName);
+      payload.append("image", data.proofPayment[0]);
+      // payload.append("bankId", checkout.bankId);
+      
+      props.submitBooking(payload).then( () => {
+        nextStep();
+      }).catch(e => {
+        alert(e);
+      })
     }
 
     useEffect(() => {
@@ -165,7 +171,7 @@ const CheckOut = (props) => {
                                     isBlock
                                     isPrimary
                                     hasShadow
-                                    onClick={nextStep}
+                                    onClick={submit(nextStep)}
                                   >
                                     Continue to Book
                                   </Button>
